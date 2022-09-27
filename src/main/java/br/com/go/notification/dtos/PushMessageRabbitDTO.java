@@ -11,10 +11,10 @@ import java.time.ZonedDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActionMessageDTO {
+public class PushMessageRabbitDTO {
 
-	private String payload;
-	private String description;
+	private String userId;
+	private String message;
 	private ZonedDateTime created;
 
 }

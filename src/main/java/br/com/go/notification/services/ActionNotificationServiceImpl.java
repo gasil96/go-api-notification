@@ -1,7 +1,6 @@
 package br.com.go.notification.services;
 
 import br.com.go.notification.Utils;
-import br.com.go.notification.dtos.ActionMessageDTO;
 import br.com.go.notification.dtos.ActionNotificationDTO;
 import br.com.go.notification.entities.ActionNotification;
 import br.com.go.notification.repositories.ActionNotificationRepository;
