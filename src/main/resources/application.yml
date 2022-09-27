@@ -1,0 +1,47 @@
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:mysql://localhost:3306/babilonia?createDatabaseIfNotExist=true&useSSL=false&useTimezone=true&serverTimezone=UTC}
+    username: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:root}
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    open-in-view: true
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
+    port: 15672
+    exchange-action: action.exchange
+    queue-action: action.queue
+    routingkey-action: action.routingkey
+    exchange-push: push.exchange
+    queue-push: push.queue
+    routingkey-push: push.routingkey
+application:
+  title: '@project.artifactId@'
+  version: '@project.version@'
+  description: '@project.description@'
+logging:
+  level:
+    root: INFO
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'health, metrics'
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+server:
+  port: 8086
